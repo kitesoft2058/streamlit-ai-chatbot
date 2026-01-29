@@ -56,4 +56,27 @@ if question:
         st.chat_message('assistant').write(response)
 
 
-    
+# Streamlit 배포하기
+
+# Streamlit Community Cloud 배포
+# GitHub에 프로젝트 업로드
+# Streamlit Cloud 접속
+# New app 버튼 클릭 후 GitHub 저장소 선택
+# 자동으로 배포됨 (무료 배포 가능)
+
+# 배포한 웹앱을 컴퓨터에 앱을 설치하는 것도 가능함. [브라우저의 주소줄에 설치항목이 있음.]  -- 아래 위치에 설치됨.
+# C:\Users\Admin\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome 앱 
+
+
+
+# !! google.genai 라이브러리가 서버에 설치되어 있지 않아서 에러 !!
+
+# Streamlit Cloud는 requirements.txt에 적힌 것만 설치합니다.
+
+#프로젝트 루트에 requirements.txt 만들고 ------------------
+# streamlit
+# google-genai
+#-------------------------------------------------------
+
+# 이미 있다면 반드시 google-genai가 있는지 확인.
+# 그리고 GitHub에 push → Streamlit Cloud 재배포.
