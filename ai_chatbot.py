@@ -1,9 +1,11 @@
+# 실제 배포를 하기위해 파일을 GitHub 로 업로드 할거니. 별도의 폴더 [ streamlit_deploy ] 안에서 작업 후 Git Repository 를 만든 후 업로드.
+
 # open ai api 는 유료만 가능하여.
 # 부득이. google ai studio 의 genai api 사용
 
 #1. GEN AI 응답을 위한 라이브러리 사용 및 생성AI객체 생성 -------------------
 from google import genai
-client= genai.Client(api_key='AIzaSyCKSVVhg0ex7HLEEB5yor4av0ztpw3jX04')
+client= genai.Client(api_key='AIzaSyDoOloJkE0woHr4aMt0qzs1ty0SEg9X0bs')
 
 # 응답 제어를 위한 하이퍼파라미터 설정.
 from google.genai import types
@@ -29,6 +31,36 @@ def get_ai_response(question):
 
 #2. 채팅 UI 만들기
 import streamlit as st
+
+#0. 페이지 기본 설정 -- 브라우저의 탭영역에 표시되는 내용.
+st.set_page_config(
+    page_title="AI 불량봇",
+    page_icon="./logo/logo_chatbot.png"   
+)
+
+#1. HEADER 영역
+# 헤더 레이아웃 (이미지 + 제목 가로 배치)
+col1, col2 = st.columns([1.2, 4.8])
+
+with col1:
+    st.image(
+        "./logo/logo_chatbot.png",  # 챗봇 이미지 파일 경로 (같은 폴더에 위치)
+        width=200,
+    )
+
+with col2:
+    #HTML 로 만들어보기
+    st.markdown(
+        """
+        <h1 style='margin-bottom:0;'>AI 불량봇</h1>
+        <p style='color:gray; margin-top:0;'>이 챗봇은 모든 답변을 불량 고등학생처럼 합니다. 상처받지 마세요.</p>
+        """,
+        unsafe_allow_html=True
+    )
+
+# 구분선
+st.markdown("---") 
+
 
 #a. messages 라는 이름의 변수가 session_state 에 존재하는지 부터 확인하고 없다면 첫 문장 저장
 if "messages" not in st.session_state:
@@ -80,3 +112,7 @@ if question:
 
 # 이미 있다면 반드시 google-genai가 있는지 확인.
 # 그리고 GitHub에 push → Streamlit Cloud 재배포.
+
+
+#[수행과제]
+# 본인만의 챗봇 만들기!!!!!
