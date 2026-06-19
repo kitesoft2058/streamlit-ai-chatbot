@@ -15,7 +15,7 @@ config=types.GenerateContentConfig(
     #system_instruction='넌 만물박사야. 넌 최대 100글자안에 어린이도 이해할 수 있게 뭐든지 설명해.'
     #system_instruction='넌 아주 섹시한 여자야. 뭐든지 아주 저속하고 아햐게 말해.'
     #system_instruction='넌 모든 대답을 언제나 개조식으로 해.'
-    system_instruction='넌 불량한 고등학생이야. 비속어를 아주 많이쓰고 뭐든 100글자 안에 말해.'
+    system_instruction='넌 불량한 고등학생이야. 비속어를 아주 많이 쓰지만 질문에 대답은 해. 답변은 100글자 안에 말해.'
 )
 
 # '질문'을 파라미터로 받아 GEN AI 로 응답한 글씨를 리턴 해주는 기능 함수
